@@ -23,20 +23,23 @@ class onlyScreen(FloatLayout):
       Config.set("account", "password", self.password.text)
       Config.write()
 
-    url1 = "https://fju1.auth.fju.edu.tw/auth/index.html/u"
-    url2 = "https://fju2.auth.fju.edu.tw/auth/index.html/u"
-    url3 = "https://fju3.auth.fju.edu.tw/auth/index.html/u"
-    url4 = "https://fju4.auth.fju.edu.tw/auth/index.html/u"
-    url5 = "https://fju5.auth.fju.edu.tw/auth/index.html/u"
+    url1 = "http://fju1.auth.fju.edu.tw/auth/index.html/u"
+    url2 = "http://fju2.auth.fju.edu.tw/auth/index.html/u"
+    url3 = "http://fju3.auth.fju.edu.tw/auth/index.html/u"
+    url4 = "http://fju4.auth.fju.edu.tw/auth/index.html/u"
+    url5 = "http://fju5.auth.fju.edu.tw/auth/index.html/u"
+    url6 = "http://fju6.auth.fju.edu.tw/auth/index.html/u"
     senddata = "?user="+self.user.text+"&password="+self.password.text
 
     popup = Popup(title="FJU Wi-Fine :)", content=Label(text="FJU Wi-Fi Data Send Success!!"),size_hint=(None, None), size=(450,300))
 
-    UrlRequest(url1+senddata)
-    UrlRequest(url2+senddata)
-    UrlRequest(url3+senddata)
-    UrlRequest(url4+senddata)
-    UrlRequest(url5+senddata)
+    for i in range(0,2):
+      UrlRequest(url1+senddata)
+      UrlRequest(url2+senddata)
+      UrlRequest(url3+senddata)
+      UrlRequest(url4+senddata)
+      UrlRequest(url5+senddata)
+      UrlRequest(url6+senddata)
 
     popup.open()
 
